@@ -1,9 +1,7 @@
-module Panda #:nodoc:
-  module VERSION #:nodoc:
-    MAJOR = 0
-    MINOR = 0
-    TINY  = 2
-
-    STRING = [MAJOR, MINOR, TINY].join('.')
+module Panda
+  def version
+     open(File.join(File.dirname(__FILE__), '../../VERSION')) do |f|
+       f.read.strip
+     end
   end
 end
